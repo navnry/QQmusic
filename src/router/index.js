@@ -9,6 +9,11 @@ const Recommend = (resolve) => {
     resolve(module)
   })
 }
+const RecommendDetail = (resolve) => {
+  import('@/page/RecommendDetail').then((module) => {
+    resolve(module)
+  })
+}
 const Rank = (resolve) => {
   import('@/page/Rank').then((module) => {
     resolve(module)
@@ -36,6 +41,12 @@ export default new Router({
     {
       path: '/recommend',
       component: Recommend,
+      children: [
+        {
+          path: '/recommend/recommendDetail/:id',
+          component:RecommendDetail
+        }
+      ]
     },
 
     {

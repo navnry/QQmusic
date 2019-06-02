@@ -30,7 +30,8 @@
       <div class="main">
         <h2>热门歌单</h2>
         <div class="list-container">
-          <div class="list-item" v-for="item in recommendData.songList">
+          <div class="list-item" v-for="item in recommendData.songList"
+               @click="goTo('recommend/recommendDetail',item.id)">
             <div class="pic">
               <img :src="item.picUrl" alt="">
               <span class="listen_count"><i class="iconfont icontingyinfuxi"></i> {{((item.accessnum)/10000).toFixed(1)+'万'}}</span>
@@ -44,6 +45,7 @@
         </div>
       </div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -71,6 +73,10 @@
           console.log(res.data);
         })
       },
+      goTo(place, id) {
+        let url = `/${place}/${id}`
+        this.$router.push(url)
+      }
     },
     updated() {
       new Swiper(".banner .swiper-container", {
