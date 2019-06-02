@@ -11,7 +11,7 @@
           <p class="info_desc">更新时间:{{songmsgs.date}}</p>
         </div>
         <div>
-          <a href="" class="player-btn"></a>
+          <a href="javascript:;" class="player-btn"><i class="iconfont iconbofang1"></i></a>
         </div>
       </div>
       <div class="count_box">
@@ -196,7 +196,11 @@
     box-shadow: 0 .12rem .64rem rgba(24, 213, 156, .5);
     background-color: #22d59c;
   }
-
+  .player-btn i{
+    line-height: .8rem;
+    color: #ffffff;
+    font-size: .4rem;
+  }
   .count_box p {
     font-size: .24rem;
     color: grey;
